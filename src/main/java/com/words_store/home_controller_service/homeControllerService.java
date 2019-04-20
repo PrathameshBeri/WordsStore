@@ -1,9 +1,13 @@
 package com.words_store.home_controller_service;
 
+import java.util.List;
+
+import com.words_store.entity.wordStore;
+
 public interface homeControllerService {
 
 	
-	public String returnAllWords();
+	public List<wordStore> returnAllWords();
 	
 	public void deleteWord();
 	

@@ -78,6 +78,18 @@ public class wordStore implements Serializable {
 		this.dateAdded = dateAdded;
 	}
 
+	public wordStore() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public wordStore(String word, String definition) {
+		
+		super();
+		this.word = word;
+		this.definition = definition;
+		this.dateAdded = LocalDateTime.now();
+	}
+
 	@Override
 	public String toString() {
 		return "wordStore [id=" + id + ", word=" + word + ", definition=" + definition + ", dateAdded=" + dateAdded
