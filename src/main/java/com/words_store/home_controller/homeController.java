@@ -8,11 +8,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.words_store.entity.wordStore;
 import com.words_store.home_controller_service.homeControllerServiceImpl;
+import com.words_store.home_dto.homeControllerDTO;
 
 
 
@@ -36,11 +38,11 @@ public class homeController {
 	
 	
 	@PostMapping(value = "/saveWord")
-	public ResponseEntity saveWord(HttpRequest req) {
+	public ResponseEntity saveWord(@RequestBody homeControllerDTO word) {
 		
-		wordStore ws = new wordStore();
+		homeControllerDTO respon = homeControllerService.addWord(word);
 		//ws.setWord(req.get);
 		
-		return null;
+		return new ResponseEntity(respon, HttpStatus.OK);
 	}
-}
+}   
