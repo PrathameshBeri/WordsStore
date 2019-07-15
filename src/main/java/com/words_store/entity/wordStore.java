@@ -46,9 +46,16 @@ public class wordStore implements Serializable {
 	
 	@Column(name = "Word_root")
 	@JsonProperty(value = "word_root")
-	@ManyToOne(fetch = FetchType.EAGER)
-	private wordRoot wordRoot;
+	private wordRootEnum wordRoot;
 	
+	public wordRootEnum getWordRoot() {
+		return wordRoot;
+	}
+
+	public void setWordRoot(wordRootEnum wordRoot) {
+		this.wordRoot = wordRoot;
+	}
+
 	public Integer getId() {
 		return id;
 	}
